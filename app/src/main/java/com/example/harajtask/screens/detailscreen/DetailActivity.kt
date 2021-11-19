@@ -1,5 +1,6 @@
 package com.example.harajtask.screens.detailscreen
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -19,16 +20,23 @@ class DetailActivity : AppCompatActivity() {
 
         populateViews(post)
 
-        ivBack.setOnClickListener {
-            onBackPressed()
+        ivShare.setOnClickListener {
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "Post Details: ${post.title}")
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, "Post Details")
+            startActivity(shareIntent)
         }
+
     }
 
     private fun populateViews(item: Car) {
         ivCarImage.setImageURI(item.thumbURL)
         tvTitle.text = item.title
         tvCity.text = item.city
-        tvCommentCount.text = item.commentCount.toString()
         tvDate.text = DateTimeUtils.formatCarDate(item.date ?: 0L)
         tvUserName.text = item.username
         tvBody.text = item.body

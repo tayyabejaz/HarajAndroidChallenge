@@ -69,10 +69,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvUserName"
-        tools:text="100"
-        android:drawablePadding="5dp"
-        app:drawableStartCompat="@drawable/ic_comment"
-        app:drawableTint="@color/grey" />
+        tools:text="100" />
 
     <TextView
         android:id="@+id/tvDate"

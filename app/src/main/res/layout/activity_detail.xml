@@ -8,92 +8,64 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/ivBack"
+            android:id="@+id/ivShare"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:padding="3dp"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/back"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/ic_share"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/white" />
 
-        <TextView
-            android:id="@+id/activityTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivBack"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Detail Activity" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/ivCarImage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="24dp"
-        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:roundedCornerRadius="10dp" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/elmessiri"
         android:gravity="center"
         android:textColor="@color/titleColor"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layoutDirection="rtl"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivCarImage"
         tools:text="Title" />
-
-    <LinearLayout
-        android:id="@+id/llUserDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layoutDirection="rtl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
         <TextView
             android:id="@+id/tvUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="20dp"
             android:drawablePadding="5dp"
             android:fontFamily="@font/elmessiri"
             android:textColor="@color/grey"
-            android:textSize="12sp"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
             app:drawableStartCompat="@drawable/ic_user"
             app:drawableTint="@color/grey"
-            app:layout_constraintEnd_toStartOf="@id/tvCity"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
             tools:text="username" />
 
         <TextView
@@ -102,26 +74,15 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:textColor="@color/grey"
-            android:textSize="12sp"
+            android:textSize="14sp"
+            android:layout_marginEnd="30dp"
             android:drawablePadding="5dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
             tools:text="City Name"
             app:drawableStartCompat="@drawable/ic_location" />
 
-        <TextView
-            android:id="@+id/tvCommentCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/elmessiri"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            app:drawableStartCompat="@drawable/ic_comment"
-            app:drawableTint="@color/grey"
-            tools:text="100" />
-    </LinearLayout>
 
     <TextView
         android:id="@+id/tvDate"
@@ -129,10 +90,9 @@
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:textSize="12sp"
-        android:layoutDirection="rtl"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llUserDetail"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:text="date" />
 
     <TextView
@@ -140,11 +100,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:layoutDirection="rtl"
+        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDate" />
+        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
